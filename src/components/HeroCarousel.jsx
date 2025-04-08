@@ -1,5 +1,5 @@
 import React from 'react';
-import './HeroCarousel.css'; // Import custom CSS for transitions
+import './HeroCarousel.css'; // Import custom CSS
 
 function HeroCarousel() {
   return (
@@ -7,24 +7,23 @@ function HeroCarousel() {
       <div className="carousel-inner">
         {/* First Slide */}
         <div className="carousel-item active">
-          <div className="container hero-section mt-5">
-            <div className="row align-items-center">
-              <div className="col-md-6 hero-content">
-                <p className="text-primary animate-text">Welcome to Rambura School</p>
-                <h1 className="animate-text">Empowering Students for a Brighter Future</h1>
-                <p className="animate-text">
-                  Rambura School is committed to nurturing academic excellence, creativity,
-                  and strong values for every student.
-                </p>
-                <button className="btn btn-primary hero-btn">Learn More</button>
-              </div>
-              <div className="col-md-6 text-center hero-image">
-                <img
-                  src="https://thepienews.com/wp-content/uploads/2024/09/Indians-Germany.jpg"
-                  className="img-fluid animate-image"
-                  style={{ maxHeight: '400px' }}
-                  alt="Hero"
-                />
+          <div
+            className="hero-section"
+            style={{
+              backgroundImage: `url(https://ggie.berkeley.edu/wp-content/uploads/2019/04/Student-Well-Being_1410x820-705x410.jpg)`,
+            }}
+          >
+            <div className="container h-100">
+              <div className="row h-100 align-items-center">
+                <div className="col-12 hero-content text-center text-md-left">
+                  <p className="text-primary animate-text">Welcome to Rambura School</p>
+                  <h1 className="animate-text">Empowering Students for a Brighter Future</h1>
+                  <p className="animate-text">
+                    Rambura School is committed to nurturing academic excellence, creativity,
+                    and strong values for every student.
+                  </p>
+                  <button className="btn btn-primary hero-btn">Learn More</button>
+                </div>
               </div>
             </div>
           </div>
@@ -32,24 +31,23 @@ function HeroCarousel() {
 
         {/* Second Slide */}
         <div className="carousel-item">
-          <div className="container hero-section mt-5">
-            <div className="row align-items-center">
-              <div className="col-md-6 hero-content">
-                <p className="text-primary animate-text">Unlock Potential</p>
-                <h1 className="animate-text">Building Future Leaders Today</h1>
-                <p className="animate-text">
-                  We offer a supportive learning environment that encourages
-                  leadership, innovation, and community engagement.
-                </p>
-                <button className="btn btn-primary hero-btn">Explore</button>
-              </div>
-              <div className="col-md-6 text-center hero-image">
-                <img
-                  src="https://s3.youthkiawaaz.com/wp-content/uploads/2014/11/06091631/college-edu.jpg"
-                  className="img-fluid animate-image"
-                  style={{ maxHeight: '400px' }}
-                  alt="Future Leaders"
-                />
+          <div
+            className="hero-section"
+            style={{
+              backgroundImage: `url(https://s3.youthkiawaaz.com/wp-content/uploads/2014/11/06091631/college-edu.jpg)`,
+            }}
+          >
+            <div className="container h-100">
+              <div className="row h-100 align-items-center">
+                <div className="col-12 hero-content text-center text-md-left">
+                  <p className="text-primary animate-text">Unlock Potential</p>
+                  <h1 className="animate-text">Building Future Leaders Today</h1>
+                  <p className="animate-text">
+                    We offer a supportive learning environment that encourages
+                    leadership, innovation, and community engagement.
+                  </p>
+                  <button className="btn btn-primary hero-btn">Explore</button>
+                </div>
               </div>
             </div>
           </div>

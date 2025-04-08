@@ -1,8 +1,31 @@
 /* HeroCarousel.css */
 
-/* Ensure the carousel item has a relative position for animations */
-.carousel-item {
+/* Base styles for the hero section */
+.hero-section {
     position: relative;
+    height: 500px; /* Default height */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  /* Dark overlay for text readability */
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
+    z-index: 1;
+  }
+  
+  /* Ensure content sits above the overlay */
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff; /* White text for contrast */
   }
   
   /* Text animation when slide becomes active */
@@ -25,26 +48,13 @@
     animation-delay: 0.5s;
   }
   
-  /* Image animation */
-  .animate-image {
-    opacity: 0;
-    transform: scale(0.95);
-    animation: fadeInScale 0.8s ease-out forwards;
-    transition: transform 0.3s ease;
-  }
-  
-  /* Image hover effect */
-  .animate-image:hover {
-    transform: scale(1.02); /* Slight zoom on hover */
-  }
-  
   /* Button hover transition */
   .hero-btn {
     transition: transform 0.3s ease, background-color 0.3s ease;
   }
   
   .hero-btn:hover {
-    transform: scale(1.05); /* Slight scale on hover */
+    transform: scale(1.05);
     background-color: #0056b3; /* Darker shade of Bootstrap primary */
   }
   
@@ -60,21 +70,123 @@
     }
   }
   
-  /* Fade-in and scale animation for images */
-  @keyframes fadeInScale {
-    0% {
-      opacity: 0;
-      transform: scale(0.95);
+  /* Ensure animations only trigger when slide is active */
+  .carousel-item:not(.active) .animate-text {
+    animation: none;
+    opacity: 0;
+  }
+  
+  /* Responsive Adjustments */
+  
+  /* Small screens (<576px) */
+  @media (max-width: 575.98px) {
+    .hero-section {
+      height: 400px; /* Shorter height for mobile */
     }
-    100% {
-      opacity: 1;
-      transform: scale(1);
+  
+    .hero-content {
+      text-align: center;
+      padding: 0 15px;
+    }
+  
+    .hero-content h1 {
+      font-size: 1.75rem; /* Smaller heading */
+    }
+  
+    .hero-content p {
+      font-size: 0.9rem; /* Smaller paragraph */
+    }
+  
+    .animate-text {
+      transform: translateY(10px); /* Reduced distance */
+      animation: fadeInUpMobile 0.5s ease-out forwards; /* Faster animation */
+    }
+  
+    .hero-content .animate-text:nth-child(1) {
+      animation-delay: 0s; /* Minimal stagger */
+    }
+  
+    .hero-content .animate-text:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+  
+    .hero-content .animate-text:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+  
+    .hero-btn {
+      width: 100%; /* Full-width button */
+      padding: 10px;
+    }
+  
+    /* Disable hover on touch devices */
+    .hero-btn:hover {
+      transform: none;
+      background-color: #007bff; /* Original color */
+    }
+  
+    @keyframes fadeInUpMobile {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   }
   
-  /* Ensure animations only trigger when slide is active */
-  .carousel-item:not(.active) .animate-text,
-  .carousel-item:not(.active) .animate-image {
-    animation: none;
-    opacity: 0;
+  /* Medium screens (576px - 767.98px) */
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .hero-section {
+      height: 450px; /* Medium height */
+    }
+  
+    .hero-content {
+      text-align: center; /* Still centered for medium screens */
+      padding: 0 20px;
+    }
+  
+    .hero-content h1 {
+      font-size: 2.25rem;
+    }
+  
+    .hero-content p {
+      font-size: 1rem;
+    }
+  
+    .animate-text {
+      transform: translateY(15px);
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+  
+    .hero-btn {
+      width: auto; /* Restore button width */
+    }
+  }
+  
+  /* Large screens (>=768px) */
+  @media (min-width: 768px) {
+    .hero-section {
+      height: 500px; /* Original height */
+    }
+  
+    .hero-content {
+      text-align: left; /* Left-aligned per md breakpoint */
+      padding: 0 30px;
+    }
+  
+    .hero-content h1 {
+      font-size: 3rem; /* Larger heading */
+    }
+  
+    .hero-content p {
+      font-size: 1.125rem;
+    }
+  
+    .hero-btn:hover {
+      transform: scale(1.05);
+      background-color: #0056b3;
+    }
   }
