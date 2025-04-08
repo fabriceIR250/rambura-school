@@ -1,0 +1,48 @@
+/* Features.css */
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform, box-shadow; /* Optimize for performance */
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px) scale(1.02); /* Slight lift and scale on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important; /* Enhanced shadow */
+  }
+  
+  .feature-icon {
+    transition: color 0.3s ease;
+  }
+  
+  .feature-card:hover .feature-icon {
+    color: #007bff; /* Change icon color on hover (customize as needed) */
+  }
+  
+  /* Fade-in animation on load */
+  .animate-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+  
+  /* Staggered animation for each card */
+  .animate-card:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  
+  .animate-card:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .animate-card:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

@@ -1,20 +1,80 @@
-.hero-slide {
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
+/* HeroCarousel.css */
+
+/* Ensure the carousel item has a relative position for animations */
+.carousel-item {
+    position: relative;
   }
   
-  .slide-1 {
-    background-image: url('/images/students-knowing-right-answer.jpg');
+  /* Text animation when slide becomes active */
+  .animate-text {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
   }
   
-  .slide-2 {
-    background-image: url('/images/future-leaders.jpg');
+  /* Staggered delays for text elements */
+  .hero-content .animate-text:nth-child(1) {
+    animation-delay: 0.1s;
   }
   
-  .hero-slide h1, .hero-slide p {
-    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  .hero-content .animate-text:nth-child(2) {
+    animation-delay: 0.3s;
   }
   
+  .hero-content .animate-text:nth-child(3) {
+    animation-delay: 0.5s;
+  }
+  
+  /* Image animation */
+  .animate-image {
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInScale 0.8s ease-out forwards;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Image hover effect */
+  .animate-image:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+  }
+  
+  /* Button hover transition */
+  .hero-btn {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .hero-btn:hover {
+    transform: scale(1.05); /* Slight scale on hover */
+    background-color: #0056b3; /* Darker shade of Bootstrap primary */
+  }
+  
+  /* Fade-in animation for text */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Fade-in and scale animation for images */
+  @keyframes fadeInScale {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Ensure animations only trigger when slide is active */
+  .carousel-item:not(.active) .animate-text,
+  .carousel-item:not(.active) .animate-image {
+    animation: none;
+    opacity: 0;
+  }
