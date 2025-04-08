@@ -1,0 +1,16 @@
+
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+.hero-section {
+  padding: 40px 0;
+}
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}

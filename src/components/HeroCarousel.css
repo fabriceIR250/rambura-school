@@ -1,0 +1,20 @@
+.hero-slide {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  .slide-1 {
+    background-image: url('/images/students-knowing-right-answer.jpg');
+  }
+  
+  .slide-2 {
+    background-image: url('/images/future-leaders.jpg');
+  }
+  
+  .hero-slide h1, .hero-slide p {
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  }
+  
