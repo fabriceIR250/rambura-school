@@ -10,7 +10,7 @@ function HeroCarousel() {
           <div
             className="hero-section"
             style={{
-              backgroundImage: `url(https://ggie.berkeley.edu/wp-content/uploads/2019/04/Student-Well-Being_1410x820-705x410.jpg)`,
+              backgroundImage: `url(https://www.igihe.com/local/cache-vignettes/L600xH450/arton42143-ea4bd.jpg?1714155776)`,
             }}
           >
             <div className="container h-100">
@@ -34,7 +34,7 @@ function HeroCarousel() {
           <div
             className="hero-section"
             style={{
-              backgroundImage: `url(https://s3.youthkiawaaz.com/wp-content/uploads/2014/11/06091631/college-edu.jpg)`,
+              backgroundImage: `url(https://pbs.twimg.com/media/Gj21VnUWUAELjTi?format=jpg&name=large)`,
             }}
           >
             <div className="container h-100">
